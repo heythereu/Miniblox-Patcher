@@ -1,0 +1,37 @@
+{
+  "name": "Miniblox-Patcher",
+  "version": "1.0.0",
+  "description": "A simple open-source patcher",
+  "manifest_version": 3,
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://miniblox.io/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://miniblox.io/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "patch.png",
+    "48": "patch.png",
+    "128": "patch.png"
+  }
+}
